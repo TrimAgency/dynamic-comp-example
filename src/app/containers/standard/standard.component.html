@@ -1,0 +1,27 @@
+  <h1>
+    Welcome to Super BadAss App! 
+  </h1>
+
+  <button *ngFor="let button of buttons"
+          (click)="showForm(button.arg)">
+          {{ button.text }}
+  </button>
+
+  <div class="form-container" [class.show-logo]="logo">
+      
+    <app-login *ngIf="user" 
+              [title]="'User Login'" 
+              (submitted)="userLogin($event)"
+              ></app-login>
+
+    <app-login *ngIf="admin" 
+              [title]="'Admin Login'" 
+              (submitted)="adminLogin($event)"
+              ></app-login>
+
+    <app-sign-up *ngIf="signUp"
+                [title]="'User Sign Up'" 
+                (submitted)="userSignUp($event)"
+                ></app-sign-up>
+
+  </div>

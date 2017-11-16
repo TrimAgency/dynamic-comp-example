@@ -1,0 +1,10 @@
+  <h1>
+    Welcome to Super BadAss App! 
+  </h1>
+    
+  <button *ngFor="let button of buttons"
+  (click)="showForm(button.arg)">
+  {{ button.text }}
+  </button>
+    
+  <div class="form-container" [class.show-logo]="logo" #form></div>
